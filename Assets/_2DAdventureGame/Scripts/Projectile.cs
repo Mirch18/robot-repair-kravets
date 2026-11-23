@@ -2,7 +2,10 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
+    public float lifeTime = 1.0f;
+
     Rigidbody2D rigidbody2d;
+    float timer;
 
     void Awake()
     {
@@ -15,10 +18,17 @@ public class Projectile : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        timer -= Time.deltaTime;
+        if (timer <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void Launch(Vector2 direction, float force)
     {
+        timer = lifeTime;
         rigidbody2d.AddForce(direction * force);
     }
 
