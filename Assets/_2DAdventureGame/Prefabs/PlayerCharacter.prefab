@@ -300,7 +300,7 @@ MonoBehaviour:
       m_Flags: 0
     m_Flags: 0
     m_Priority: 0
-  speed: 3
+  speed: 2.5
   maxHealth: 5
   timeInvincible: 1.5
   projectilePrefab: {fileID: 2059123023289380022, guid: 8b4e6e72088d82742b5484c6f7a6acbd,

@@ -5,6 +5,7 @@ public class EnemyController : MonoBehaviour
     public float speed;
     public bool vertical;
     public float changeTime = 3.0f;
+    public int damage = 1;
 
     Rigidbody2D rigidbody2d;
     Animator animator;
@@ -66,7 +67,7 @@ public class EnemyController : MonoBehaviour
 
         if (player != null)
         {
-            player.ChangeHealth(-1);
+            player.ChangeHealth(-damage);
         }
     }
 
