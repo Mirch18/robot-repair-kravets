@@ -1,8 +1,20 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
-    <ui:VisualElement name="LoseScreenContainer" picking-mode="Ignore" style="flex-grow: 1; position: absolute; top: 0; right: 0; bottom: 0; left: 0; background-color: rgb(0, 0, 0); opacity: 0; transition-property: opacity; transition-duration: 1s; transition-timing-function: ease;">
-        <ui:VisualElement name="LoseScreen" picking-mode="Ignore" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/_2DAdventureGame/Tutorial_Demo/Demo_Art/Common/LoseScreen.png?fileID=-8697964458621741418&amp;guid=68999694f4e00437a8c4f0b6053e3d45&amp;type=3#LoseScreen_0&quot;); -unity-background-scale-mode: scale-to-fit;" />
+    <ui:VisualElement name="LoseScreenContainer" picking-mode="Ignore" style="flex-grow: 1; position: absolute; top: 0; right: 0; bottom: 0; left: 0; background-color: rgb(45, 12, 18); opacity: 0; transition-property: opacity; transition-duration: 1s; transition-timing-function: ease;">
+        <ui:VisualElement name="LoseScreen" picking-mode="Ignore" style="flex-grow: 1; flex-direction: row; align-items: center; padding-left: 8%; padding-right: 8%;">
+            <ui:VisualElement name="LoseScreenPortrait" picking-mode="Ignore" style="width: 32%; height: 85%; background-image: url(&quot;project://database/Assets/_2DAdventureGame/Tutorial_Demo/Demo_Art/Common/CharacterScreen_Ruby.png?fileID=21300000&amp;guid=104319c8e9ba60643b4f97c877dab204&amp;type=3#CharacterScreen_Ruby&quot;); -unity-background-scale-mode: scale-to-fit; -unity-background-image-tint-color: rgba(255, 255, 255, 0.45);" />
+            <ui:VisualElement name="LoseScreenText" picking-mode="Ignore" style="flex-grow: 1; padding-left: 5%;">
+                <ui:Label text="Поразка" picking-mode="Ignore" style="font-size: 110px; -unity-font-style: bold; color: rgb(255, 110, 110); text-shadow: 3px 4px 6px rgba(0, 0, 0, 0.8);" />
+                <ui:Label text="Вода й роботи виявилися сильнішими. Рівень почнеться знову…" picking-mode="Ignore" style="font-size: 44px; color: rgb(255, 255, 255); white-space: normal; margin-top: 20px; text-shadow: 2px 3px 4px rgba(0, 0, 0, 0.8);" />
+            </ui:VisualElement>
+        </ui:VisualElement>
     </ui:VisualElement>
-    <ui:VisualElement name="WinScreenContainer" picking-mode="Ignore" style="flex-grow: 1; position: absolute; top: 0; right: 0; bottom: 0; left: 0; background-color: rgb(0, 0, 0); opacity: 0; transition-property: opacity; transition-duration: 1s; transition-timing-function: ease;">
-        <ui:VisualElement name="WinScreen" picking-mode="Ignore" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/_2DAdventureGame/Tutorial_Demo/Demo_Art/Common/WinScreen.png?fileID=-848381713617584042&amp;guid=d46766d63d5ca44c6b1a4d318b1eaf72&amp;type=3#WinScreen_0&quot;); -unity-background-scale-mode: scale-to-fit;" />
+    <ui:VisualElement name="WinScreenContainer" picking-mode="Ignore" style="flex-grow: 1; position: absolute; top: 0; right: 0; bottom: 0; left: 0; background-color: rgb(12, 45, 40); opacity: 0; transition-property: opacity; transition-duration: 1s; transition-timing-function: ease;">
+        <ui:VisualElement name="WinScreen" picking-mode="Ignore" style="flex-grow: 1; flex-direction: row; align-items: center; padding-left: 8%; padding-right: 8%;">
+            <ui:VisualElement name="WinScreenPortrait" picking-mode="Ignore" style="width: 32%; height: 85%; background-image: url(&quot;project://database/Assets/_2DAdventureGame/Tutorial_Demo/Demo_Art/Common/CharacterScreen_Ruby.png?fileID=21300000&amp;guid=104319c8e9ba60643b4f97c877dab204&amp;type=3#CharacterScreen_Ruby&quot;); -unity-background-scale-mode: scale-to-fit; -unity-background-image-tint-color: rgb(255, 255, 255);" />
+            <ui:VisualElement name="WinScreenText" picking-mode="Ignore" style="flex-grow: 1; padding-left: 5%;">
+                <ui:Label text="Перемога!" picking-mode="Ignore" style="font-size: 110px; -unity-font-style: bold; color: rgb(255, 214, 90); text-shadow: 3px 4px 6px rgba(0, 0, 0, 0.8);" />
+                <ui:Label text="Усі роботи полагоджені — від пристані до вежі. Рівень почнеться знову…" picking-mode="Ignore" style="font-size: 44px; color: rgb(255, 255, 255); white-space: normal; margin-top: 20px; text-shadow: 2px 3px 4px rgba(0, 0, 0, 0.8);" />
+            </ui:VisualElement>
+        </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>
