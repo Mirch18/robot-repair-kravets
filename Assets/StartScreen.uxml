@@ -1,0 +1,15 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:VisualElement name="Water" style="position: absolute; top: 0; right: 0; bottom: 0; left: 0; background-image: url(&quot;project://database/Assets/_2DAdventureGame/Art/Ruby/Environment/RisingWater.png?fileID=21300000&amp;guid=1476f7017ab3bdf48b07cc22fc00f125&amp;type=3#RisingWater&quot;); background-repeat: repeat; background-size: 128px 128px;">
+        <ui:VisualElement name="Shade" style="position: absolute; top: 0; right: 0; bottom: 0; left: 0; background-color: rgba(4, 30, 45, 0.72);" />
+        <ui:VisualElement name="Layout" style="position: absolute; top: 0; right: 0; bottom: 0; left: 0; flex-direction: row; align-items: center; padding-left: 6%; padding-right: 6%;">
+            <ui:VisualElement name="Portrait" style="width: 30%; height: 86%; background-image: url(&quot;project://database/Assets/_2DAdventureGame/Tutorial_Demo/Demo_Art/Common/CharacterScreen_Ruby.png?fileID=21300000&amp;guid=104319c8e9ba60643b4f97c877dab204&amp;type=3#CharacterScreen_Ruby&quot;); -unity-background-scale-mode: scale-to-fit;" />
+            <ui:VisualElement name="Panel" style="flex-grow: 1; margin-left: 5%;">
+                <ui:Label name="Title" text="Robot Repair:" style="font-size: 72px; -unity-font-style: bold; color: rgb(200, 240, 255); text-shadow: 2px 3px 5px rgba(0, 20, 30, 0.9);" />
+                <ui:Label name="Subtitle" text="ПРИПЛИВ" style="font-size: 150px; -unity-font-style: bold; color: rgb(110, 230, 255); margin-top: -20px; text-shadow: 2px 3px 5px rgba(0, 20, 30, 0.9);" />
+                <ui:Label name="Goal" text="Вода піднімається! Полагодь шестернями всіх роботів від пристані до вежі, поки приплив не наздогнав." style="font-size: 40px; color: rgb(255, 255, 255); white-space: normal; margin-top: 10px; text-shadow: 2px 3px 5px rgba(0, 20, 30, 0.9);" />
+                <ui:Label name="Controls" text="Стрілки / WASD — рух   ·   C — шестерня   ·   X — розмова" style="font-size: 32px; color: rgb(255, 225, 150); white-space: normal; margin-top: 24px; text-shadow: 2px 3px 5px rgba(0, 20, 30, 0.9);" />
+                <ui:Button name="StartButton" text="Почати  ▶" style="font-size: 50px; -unity-font-style: bold; color: rgb(4, 30, 45); background-color: rgb(110, 230, 255); border-top-left-radius: 40px; border-top-right-radius: 40px; border-bottom-left-radius: 40px; border-bottom-right-radius: 40px; padding-top: 12px; padding-bottom: 12px; padding-left: 50px; padding-right: 50px; margin-top: 50px; align-self: flex-start; border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
