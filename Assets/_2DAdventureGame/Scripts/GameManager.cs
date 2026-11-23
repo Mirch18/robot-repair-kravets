@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
     public PlayerController player;
     EnemyController[] enemies;
     public UIHandler uiHandler;
+    public AudioClip winClip;
     bool gameOver;
 
     void Start()
@@ -31,6 +32,11 @@ public class GameManager : MonoBehaviour
         if (AllEnemiesFixed())
         {
             uiHandler.DisplayWinScreen();
+            AudioSource audioSource = GetComponent<AudioSource>();
+            if (audioSource != null && winClip != null)
+            {
+                audioSource.PlayOneShot(winClip);
+            }
             gameOver = true;
             Invoke(nameof(ReloadScene), 3f);
         }

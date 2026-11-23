@@ -6,6 +6,7 @@ public class EnemyController : MonoBehaviour
     public bool vertical;
     public float changeTime = 3.0f;
     public int damage = 1;
+    public AudioClip fixedClip;
 
     Rigidbody2D rigidbody2d;
     Animator animator;
@@ -76,5 +77,11 @@ public class EnemyController : MonoBehaviour
         broken = false;
         rigidbody2d.simulated = false;
         animator.SetTrigger("Fixed");
+
+        AudioSource audioSource = GetComponent<AudioSource>();
+        if (audioSource != null && fixedClip != null)
+        {
+            audioSource.PlayOneShot(fixedClip);
+        }
     }
 }

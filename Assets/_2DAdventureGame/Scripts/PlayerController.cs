@@ -1,3 +1,4 @@
+using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -25,6 +26,14 @@ public class PlayerController : MonoBehaviour
     public InputAction TalkAction;
     private NonPlayerCharacter lastNonPlayerCharacter;
 
+    public AudioClip hitClip;
+    public AudioClip launchClip;
+    public Color hitColor = new Color(1f, 0.35f, 0.35f);
+    AudioSource audioSource;
+    SpriteRenderer spriteRenderer;
+    CinemachineImpulseSource impulseSource;
+    float hitFlashTimer;
+
     void Start()
     {
         MoveAction.Enable();
@@ -33,6 +42,9 @@ public class PlayerController : MonoBehaviour
         rigidbody2d = GetComponent<Rigidbody2D>();
         currentHealth = maxHealth;
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        impulseSource = GetComponent<CinemachineImpulseSource>();
     }
 
     void Update()
@@ -57,6 +69,15 @@ public class PlayerController : MonoBehaviour
             if (damageCooldown < 0)
             {
                 isInvincible = false;
+            }
+        }
+
+        if (hitFlashTimer > 0)
+        {
+            hitFlashTimer -= Time.deltaTime;
+            if (hitFlashTimer <= 0)
+            {
+                spriteRenderer.color = Color.white;
             }
         }
 
@@ -104,6 +125,17 @@ public class PlayerController : MonoBehaviour
             isInvincible = true;
             damageCooldown = timeInvincible;
             animator.SetTrigger("Hit");
+            PlaySound(hitClip);
+            spriteRenderer.color = hitColor;
+            hitFlashTimer = 0.2f;
+            if (impulseSource != null)
+            {
+                impulseSource.GenerateImpulse();
+            }
+        }
+        else if (amount > 0)
+        {
+            UIHandler.instance.ShowHeal(amount, transform.position);
         }
 
         currentHealth = Mathf.Clamp(currentHealth + amount,
@@ -122,6 +154,15 @@ public class PlayerController : MonoBehaviour
         projectile.Launch(moveDirection, 300);
 
         animator.SetTrigger("Launch");
+        PlaySound(launchClip);
+    }
+
+    public void PlaySound(AudioClip clip)
+    {
+        if (audioSource != null && clip != null)
+        {
+            audioSource.PlayOneShot(clip);
+        }
     }
 
     void FindFriend()
